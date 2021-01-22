@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  border: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin: 150px;
+}
+
+.flex {
+  display: flex;
+}
+
+.step {
+  position: relative;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 310px;
+  height: 60px;
+  background: linear-gradient(180deg, #686868 0%, #b3b3b3 50.52%, #686868 100%);
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+
+  clip-path: polygon(
+    10px 50%,
+    0% 0%,
+    calc(100% - 10px) 0%,
+    100% 50%,
+    calc(100% - 10px) 100%,
+    0% 100%
+  );
+}
+
+.step:first-of-type {
+  clip-path: polygon(
+    0 0,
+    0% 0%,
+    calc(100% - 10px) 0%,
+    100% 50%,
+    calc(100% - 10px) 100%,
+    0% 100%
+  );
+}
+
+.step:last-of-type {
+  clip-path: polygon(
+    10px 50%,
+    0% 0%,
+    100% 0%,
+    100% 50%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+.step.active {
+  background: linear-gradient(180deg, #2ea239 0%, #62fd71 50.52%, #2ea139 100%);
+  text-shadow: 0 0 2px #000000;
+}

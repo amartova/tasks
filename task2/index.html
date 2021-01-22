@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <form action="#">
+        <div class="header">
+          <h1>Регистрация</h1>
+        </div>
+        <div class="body">
+          <div class="control">
+            <label>E-mail</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="example@site.domain"
+              required
+            />
+          </div>
+          <div class="flex">
+            <div class="control">
+              <label>Пароль</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                required
+              />
+            </div>
+            <div class="control">
+              <label>Повторите пароль</label>
+              <input
+                type="password"
+                name="repeatpassword"
+                placeholder="password"
+                required
+              />
+            </div>
+          </div>
+          <div class="control">
+            <label>ФИО</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Игорев Игорь Игоревич"
+              required
+            />
+          </div>
+          <div class="control">
+            <label>Возраст</label>
+            <input type="number" name="age" placeholder="18" required />
+          </div>
+        </div>
+        <div class="footer">
+          <div class="flex">
+            <button type="submit">Отправить</button>
+            <button type="reset">Отмена</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

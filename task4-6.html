@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <script src="./task4/printTriangle.js"></script>
+    <script src="./task5/task5.js"></script>
+    <script src="./task6/task6.js"></script>
+    <script>
+      // Взято отсюда https://qna.habr.com/q/619654
+      function print_r(arr, level) {
+        var print_red_text = "";
+        if (!level) level = 0;
+        var level_padding = "";
+        for (var j = 0; j < level + 1; j++) level_padding += "    ";
+        if (typeof arr == "object") {
+          for (var item in arr) {
+            var value = arr[item];
+            if (typeof value == "object") {
+              print_red_text += level_padding + "'" + item + "' :\n";
+              print_red_text += print_r(value, level + 1);
+            } else
+              print_red_text +=
+                level_padding + "'" + item + "' => \"" + value + '"\n';
+          }
+        } else print_red_text = "===>" + arr + "<===(" + typeof arr + ")";
+        return print_red_text;
+      }
+    </script>
+    <script>
+      window.onload = function () {
+        document.getElementById("task4").innerHTML = printTriangle();
+        document.getElementById("task5").innerHTML = task5().join("\n");
+        document.getElementById("task6").innerHTML = print_r(task6());
+      };
+    </script>
+    <style>
+      table {
+        border: solid 1px #000000;
+        border-collapse: collapse;
+      }
+
+      td {
+        border: solid 1px #000;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>Task4</td>
+        <td>
+          <pre id="task4"></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Task5</td>
+        <td>
+          <pre id="task5"></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Task6</td>
+        <td>
+          <pre id="task6"></pre>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
